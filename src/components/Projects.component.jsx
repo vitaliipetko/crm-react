@@ -4,7 +4,23 @@ import { Link } from "react-router-dom";
 class Projects extends Component {
 
   state = {
-    projects: []
+    projects: [
+      {
+        id: '1',
+        title: 'First project',
+        description: 'description first project'
+      },
+      {
+        id: '2',
+        title: 'Second project',
+        description: 'description second project'
+      },
+      {
+        id: '3',
+        title: 'Third project',
+        description: 'description Third project'
+      },
+    ]
   }
 
   componentDidMount() {

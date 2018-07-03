@@ -4,7 +4,23 @@ import { Link } from "react-router-dom";
 class Projects extends Component {
 
   state = {
-    tasks: []
+    tasks: [
+      {
+        id: "1",
+        title: "test",
+        description: "description"
+      },
+      {
+        id: "2",
+        title: "test",
+        description: "description"
+      },
+      {
+        id: "3",
+        title: "test",
+        description: "description"
+      }
+    ]
   }
 
   componentDidMount() {
@@ -12,43 +28,23 @@ class Projects extends Component {
   }
 
   getTasks() {
-    // if (this.props.id) {
-    //   fetch('//crm.loc/api?__f=' + this.props.f + "&id=" + this.props.id)
-    //     .then(response => response.json())
-    //     .then(data => {
-    //       this.setState({
-    //         tasks: data
-    //       })
-    //     });
-    // } else {
-    //   fetch('//crm.loc/api?__f=' + this.props.f)
-    //     .then(response => response.json())
-    //     .then(data => {
-    //       this.setState({
-    //         tasks: data
-    //       })
-    //     });
-    // }
-
-    this.setState({
-      tasks: [
-        {
-          id: "1",
-          title: "test",
-          description: "description"
-        },
-        {
-          id: "1",
-          title: "test",
-          description: "description"
-        },
-        {
-          id: "1",
-          title: "test",
-          description: "description"
-        }
-      ]
-    });
+    if (this.props.id) {
+      fetch('//crm.loc/api?__f=' + this.props.f + "&id=" + this.props.id)
+        .then(response => response.json())
+        .then(data => {
+          this.setState({
+            tasks: data
+          })
+        });
+    } else {
+      fetch('//crm.loc/api?__f=' + this.props.f)
+        .then(response => response.json())
+        .then(data => {
+          this.setState({
+            tasks: data
+          })
+        });
+    }
   }
 
   render() {

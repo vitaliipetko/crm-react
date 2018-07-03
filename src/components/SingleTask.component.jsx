@@ -3,7 +3,11 @@ import React, { Component } from "react";
 class Projects extends Component {
 
   state = {
-    task: []
+    task: {
+      id: "1",
+      title: "test",
+      description: "description"
+    }
   }
 
   componentDidMount() {

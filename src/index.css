@@ -477,7 +477,7 @@ input[type=submit] {
   -o-transition: all .4s;
   transition: all .4s;
   position: relative;
-  max-width: 400px;
+  max-width: 250px;
   margin: 0 auto;
 }
 
