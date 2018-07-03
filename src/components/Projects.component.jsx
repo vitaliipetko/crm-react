@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+import config from './../config.json';
+
 class Projects extends Component {
 
   state = {
@@ -28,7 +30,7 @@ class Projects extends Component {
   }
 
   getProject() {
-    fetch('//crm.loc/api?__f=' + this.props.f)
+      fetch(config.api + '/api?__f=' + this.props.f)
       .then(response => response.json())
       .then(data => {
         this.setState({
@@ -47,7 +49,7 @@ class Projects extends Component {
               <div className="col-lg-4 col-md-6" key={i}>
                 <Link to={"/project/"+project.id}>
                 <div className="app__project--item">
-                  <p className="item__title">{project.title}</p>
+                  <p className="item__title">{project.project_title}</p>
                   <p className="item__description">{project.description}</p>
                 </div>
                 </Link>

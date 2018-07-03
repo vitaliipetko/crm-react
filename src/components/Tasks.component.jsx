@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+import config from './../config.json';
+
 class Projects extends Component {
 
   state = {
@@ -29,7 +31,7 @@ class Projects extends Component {
 
   getTasks() {
     if (this.props.id) {
-      fetch('//crm.loc/api?__f=' + this.props.f + "&id=" + this.props.id)
+      fetch(config.api + '/api?__f=' + this.props.f + "&id=" + this.props.id)
         .then(response => response.json())
         .then(data => {
           this.setState({
@@ -37,7 +39,7 @@ class Projects extends Component {
           })
         });
     } else {
-      fetch('//crm.loc/api?__f=' + this.props.f)
+      fetch(config.api + '/api?__f=' + this.props.f)
         .then(response => response.json())
         .then(data => {
           this.setState({
@@ -48,9 +50,15 @@ class Projects extends Component {
   }
 
   render() {
+    let button;
+    if (this.props.id) {
+      button = <span className="app__main-content--title">Tasks<Link to={"/create/task/" + this.props.id}><span className="create_btn"></span></Link></span>
+    } else {
+      button = <span className="app__main-content--title">Tasks</span>
+    }
     return (
       <div className="container">
-        <span className="app__main-content--title">Tasks<Link to="/create/task"><span className="create_btn"></span></Link></span>
+        {button}
         <div className="row">
           {this.state.tasks.map((task, i) => {
             return (
@@ -58,6 +66,7 @@ class Projects extends Component {
                 <Link to={"/task/" + task.id} >
                 <div className="app__task--item">
                   <p className="item__title">{task.title}</p>
+                  <p className="project__title">{task.project_title}</p>
                 </div>
                 </Link>
               </div>

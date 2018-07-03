@@ -24,7 +24,7 @@
   display: inline-block;
   height: 20px;
   margin-top: 5px;
-  margin-left: 20px;
+  margin-left: 60px;
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
@@ -75,7 +75,6 @@
   position: fixed;
   top: 0;
   width: 150px;
-  height: 100vh;
   padding: 20px;
   padding-top: 72px;
 }
@@ -144,6 +143,28 @@
   height: 100px;
   overflow: hidden;
 }
+
+.app .item__title {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #000;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.app .item__description {
+  font-size: 12px;
+  color: #000;
+  opacity: 0.4;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
 .app__task--item {
   background: #fff;
   padding: 20px;
@@ -162,36 +183,31 @@
   margin: 0 !important;
 }
 
+.app__task--item .project__title {
+  font-size: 12px;
+  color: #000;
+  opacity: 0.4;
+  text-align: center;
+}
+
+.app__task--item .item__description {
+  font-size: 14px;
+  color: #000;
+  padding-top: 20px;
+  opacity: 1;
+}
+
 .app__project--item:hover, .app__task--item:hover {
   -moz-transform: translate(0, -10px);
   -o-transform: translate(0, -10px);
   -ms-transform: translate(0, -10px);
   -webkit-transform: translate(0, -10px);
   transform: translate(0, -10px);
+  background-color: rgba(255, 255, 255, 0.596);
 }
 
 .app__project--item:hover .item__title, .app__project--item:hover .item__description {
   color: #58b4d8;
-}
-
-.app .item__title {
-  text-align: center;
-  font-weight: 700;
-  margin-bottom: 15px;
-  color: #000;
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
-}
-
-.app .item__description {
-  font-size: 12px;
-  color: #000;
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
 }
 
 .create_btn {
