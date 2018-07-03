@@ -38,6 +38,7 @@ class Projects extends Component {
             )
           })}
         </div>
+        <Link to="/create/project"><span className="create_btn"></span></Link>
       </div>
     )
   }

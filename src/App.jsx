@@ -6,6 +6,7 @@ import Nav_top from "./components/Nav-top";
 import Projects from './components/Projects';
 import Tasks from './components/Tasks';
 import Task from './components/Task';
+import Create from './components/Create';
 
 class App extends Component {
 
@@ -33,7 +34,10 @@ class App extends Component {
                   <Route path="/project/:id" render={({ match }) => (
                       <Tasks f="tasks" id={match.params.id} />
                   )} />
-                  </Switch>
+                  <Route path="/create/:fun" render={({ match }) => (
+                      <Create fun={match.params.fun} />
+                  )} />
+                </Switch>
                 </div>
             </div>
           </BrowserRouter>
