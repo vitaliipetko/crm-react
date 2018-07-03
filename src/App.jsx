@@ -9,11 +9,11 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
           <Nav_top />
           <section className="app__content">
           <BrowserRouter>
-            <div className="container-full-width">
+            <div>
                 <div className="app__left-menu">
                     <Nav_left/>
                 </div>

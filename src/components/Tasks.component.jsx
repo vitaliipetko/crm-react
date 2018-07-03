@@ -50,21 +50,20 @@ class Projects extends Component {
   render() {
     return (
       <div className="container">
+        <span className="app__main-content--title">Tasks<Link to="/create/task"><span className="create_btn"></span></Link></span>
         <div className="row">
           {this.state.tasks.map((task, i) => {
             return (
               <div className="col-lg-12" key={i}>
                 <Link to={"/task/" + task.id} >
-                <div className="app__project--item">
+                <div className="app__task--item">
                   <p className="item__title">{task.title}</p>
-                  <p className="item__description">{task.description}</p>
                 </div>
                 </Link>
               </div>
             )
           })}
         </div>
-        <Link to="/create/task"><span className="create_btn"></span></Link>
       </div>
     )
   }
