@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 import config from './../config.json';
 
@@ -10,17 +11,20 @@ class Projects extends Component {
       {
         id: "1",
         title: "test",
-        description: "description"
+        description: "description",
+        project_title: "test"
       },
       {
         id: "2",
         title: "test",
-        description: "description"
+        description: "description",
+        project_title: "test"
       },
       {
         id: "3",
         title: "test",
-        description: "description"
+        description: "description",
+        project_title: "test"
       }
     ]
   }
@@ -58,6 +62,9 @@ class Projects extends Component {
     }
     return (
       <div className="container">
+        <Helmet>
+          <title>{config.title} | Tasks</title>
+        </Helmet>
         {button}
         <div className="row">
           {this.state.tasks.map((task, i) => {

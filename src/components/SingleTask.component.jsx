@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Helmet } from "react-helmet";
 
 import config from './../config.json';
 
@@ -8,7 +9,8 @@ class Projects extends Component {
     task: {
       id: "1",
       title: "test",
-      description: "description"
+      description: "description",
+      project_title: "test"
     }
   }
 
@@ -29,6 +31,9 @@ class Projects extends Component {
   render() {
     return (
       <div className="container">
+        <Helmet>
+          <title>{config.title} | {this.state.task.title} - {this.state.task.project_title}</title>
+        </Helmet>
         <div className="row">
           <div className="col-lg-12">
               <div className="app__task--item">
