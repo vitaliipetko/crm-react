@@ -55,16 +55,17 @@ class Projects extends Component {
 
   render() {
     let button;
+    let title;
     if (this.props.id) {
-      button = <span className="app__main-content--title">Tasks<Link to={"/create/task/" + this.props.id}><span className="create_btn"></span></Link></span>
+      button = <span className="app__main-content--title">Tasks<Link to={"/create/task/" + this.props.id}><span className="create_btn"></span></Link></span>;
+      title = <Helmet><title>{config.title} | {this.state.tasks[0].project_title}</title></Helmet>
     } else {
-      button = <span className="app__main-content--title">Tasks</span>
+      button = <span className="app__main-content--title">Tasks</span>;
+      title = <Helmet><title>{config.title} | Tasks</title></Helmet>;
     }
     return (
       <div className="container">
-        <Helmet>
-          <title>{config.title} | Tasks</title>
-        </Helmet>
+        {title}
         {button}
         <div className="row">
           {this.state.tasks.map((task, i) => {

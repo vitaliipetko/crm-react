@@ -23,6 +23,11 @@ class Projects extends Component {
         project_title: 'Third project',
         description: 'description Third project'
       },
+      {
+        id: '3',
+        project_title: 'Third project',
+        description: 'description Third project'
+      },
     ]
   }
 
@@ -45,6 +50,7 @@ class Projects extends Component {
       <div className="container">
         <Helmet>
           <title>{config.title} | Projects</title>
+          <meta name="description" content="test2" />
         </Helmet>
         <span className="app__main-content--title">Projects<Link to="/create/project"><span className="create_btn"></span></Link></span> 
         <div className="row">

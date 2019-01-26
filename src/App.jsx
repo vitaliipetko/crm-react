@@ -3,8 +3,8 @@ import { BrowserRouter } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 import config from './config.json';
-import Nav_left from './components/Nav-left.component';
-import Nav_top from "./components/Nav-top.component";
+import Navleft from './components/navLeft.component';
+import Navtop from "./components/Nav-top.component";
 import RouterService from './components/Router.component';
 
 class App extends Component {
@@ -14,13 +14,14 @@ class App extends Component {
       <div className="container">
           <Helmet>
             <title>{config.title}</title>
+            <meta name="description" content="test" />
           </Helmet>
-          <Nav_top />
+          <Navtop />
           <section className="app__content">
           <BrowserRouter>
             <div>
                 <div className="app__left-menu">
-                    <Nav_left/>
+                  <Navleft/>
                 </div>
                 <div className="app__main-content">
                   <RouterService />
